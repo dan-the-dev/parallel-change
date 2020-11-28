@@ -9,22 +9,6 @@ class ShoppingCart {
 	private $prices = [];
 	private $price = 0;
 
-	public function add(int $price) {
-		$this->price = $price;
-	}
-
-	public function getNumberOfProducts(): int {
-		return 1;
-	}
-
-	public function calculateTotalPrice(): int {
-		return $this->price;
-	}
-
-	public function hasDiscount(): bool {
-		return $this->price >= 100;
-	}
-
 	public function addItem(int $price): void {
 		array_push($this->prices, $price);
 	}
