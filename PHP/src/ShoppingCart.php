@@ -8,7 +8,7 @@ class ShoppingCart {
 	// The goal is to remove this field, replacing it with
 	private $prices = [];
 
-	public function addItem(int $price): void {
+	public function add(int $price): void {
 		array_push($this->prices, $price);
 	}
 
@@ -20,7 +20,7 @@ class ShoppingCart {
 		return array_sum($this->prices);
 	}
 
-	public function hasTheDiscount(): bool {
+	public function hasDiscount(): bool {
 		foreach($this->prices as $price) {
 			if ($price >= 100) {
 				return true;
