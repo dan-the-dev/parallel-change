@@ -7,7 +7,6 @@ class ShoppingCart {
 
 	// The goal is to remove this field, replacing it with
 	private $prices = [];
-	private $price = 0;
 
 	public function addItem(int $price): void {
 		array_push($this->prices, $price);
