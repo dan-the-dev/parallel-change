@@ -29,10 +29,20 @@ class ShoppingCartTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue($shoppingCart->hasDiscount());
 	}
 
-	public function testShoppingCartDoesNotHaveDiscountWhenNoPreiumItemInIt() {
+	public function testShoppingCartDoesNotHaveDiscountWhenNoPremiumItemInIt() {
 		$shoppingCart = new ShoppingCart();
 		$shoppingCart->add(10);
 		$shoppingCart->add(20);
+
+		$this->assertFalse($shoppingCart->hasDiscount());
+	}
+
+	public function testShoppingCartDoesNotHaveDiscountWhenPremiumItemGetsRemoved() {
+		$shoppingCart = new ShoppingCart();
+		$shoppingCart->add(100);
+		$shoppingCart->add(20);
+		$shoppingCart->add(40);
+		$shoppingCart->remove(100);
 
 		$this->assertFalse($shoppingCart->hasDiscount());
 	}
